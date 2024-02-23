@@ -8,8 +8,8 @@ export default function(){
         repeatPassword: ''
     });
 
-    const onChanged = (field: "email" | "password" | "repeatPassword") => 
-        (e: ChangeEvent) => {
+    const onChanged = (field: "email" | "password" | "repeatPassword") => {
+        return (e: ChangeEvent) => {
             if(e.currentTarget.nodeValue) {
                 setFields({
                     ...fields,
@@ -17,6 +17,7 @@ export default function(){
                 })
             }
         }
+    }
 
         
         const passwordsMatch = !!fields.password && fields.password === fields.repeatPassword;
