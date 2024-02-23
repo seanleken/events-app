@@ -9,13 +9,11 @@ export default function () {
   });
 
   const onChanged = (field: 'email' | 'password' | 'repeatPassword') => {
-    return (e: ChangeEvent) => {
-      if (e.currentTarget.nodeValue) {
-        setFields({
-          ...fields,
-          [field]: e.currentTarget.nodeValue,
-        });
-      }
+    return (e: ChangeEvent<HTMLInputElement>) => {
+      setFields({
+        ...fields,
+        [field]: e.currentTarget.value,
+      });
     };
   };
 
