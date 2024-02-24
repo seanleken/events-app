@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent } from 'react';
-import './Login.css';
+import './LoginCard.css';
 
 export default function () {
   const [fields, setFields] = useState({
