@@ -1,5 +1,14 @@
+---
+const authenticated = !!Astro.locals.user
+---
+
 <div class="header">
-   <a href="/login" class="login"><button>Log In</button></a> 
+    <div class="header-inner">
+        {authenticated 
+            ? <a href="/auth/logout" class="login"><button>Log Out</button></a> 
+            : <a href="/auth/login" class="logout"><button>Log In</button></a>
+        }
+    </div>
 </div>
 
 <style>
@@ -9,7 +18,8 @@
         flex-direction: row;
         justify-content: flex-end;
         background-color: black;
-        padding: 8px 0;
     }
-
+    .header-inner {
+        margin: 10px;
+    }
 </style>
