@@ -35,3 +35,8 @@ declare module 'lucia' {
 }
 
 type DatabaseUserAttributes = User;
+
+export type Session = {
+  id: string;
+  user_id: string;
+};

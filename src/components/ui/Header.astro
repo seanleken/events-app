@@ -1,5 +1,7 @@
 ---
-const authenticated = !!Astro.locals.user
+import type { User } from "lucia"
+
+const authenticated = !!(Astro.locals as {user: User}).user
 ---
 
 <div class="header">
